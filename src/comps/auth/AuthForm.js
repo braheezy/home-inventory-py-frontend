@@ -22,7 +22,7 @@ class AuthForm extends Component {
     const { username, password } = this.state;
     const query = "username=" + username + "&password=" + password;
     // console.log("handleSubmit query", query);
-    const full_url = process.env.REACT_APP_API_URL + "/" + this.endpoint + "?" + query;
+    const full_url = process.env.API_URL + "/" + this.endpoint + "?" + query;
     console.log("full_url", full_url);
     const response = await fetch(full_url, {
       method: "POST",
