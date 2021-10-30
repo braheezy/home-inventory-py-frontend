@@ -2,22 +2,14 @@
 These functions give the React frontend access to our API.
 They only obtain the information. Callers should handle using the data.
 */
-async function perform_fetch({
-  endpoint,
-  method = "POST",
-  query = "",
-  headers = new Headers(),
-  body = null,
-} = {}) {
+async function perform_fetch({ endpoint, method = "POST", query = "", headers = new Headers(), body = null } = {}) {
   /*
   Custom Wrapper for fetch() to interact with our API.
 
   Return result object on success, HTTP error code otherwise.
   */
   try {
-    console.log(
-      `fetching: /${endpoint}?${query}  ${method} ${headers} ${body}`
-    );
+    console.log(`fetching: /${endpoint}?${query}  ${method} ${headers} ${body}`);
     let options = {
       method: method,
       headers: headers,
@@ -27,10 +19,7 @@ async function perform_fetch({
       // No body allowed on GET
       delete options.body;
     }
-    const response = await fetch(
-      "http://127.0.0.1:5000/" + endpoint + "?" + query,
-      options
-    );
+    const response = await fetch(process.env.API_URL + endpoint + "?" + query, options);
     if (response.status == 200) {
       const result = await response.json();
       console.log(`fetch success: ${method} ${endpoint}`, result);

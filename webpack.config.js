@@ -8,8 +8,8 @@ module.exports = {
   entry: __dirname + "/js/index.jsx",
   // For webpacks HMR
   devServer: {
-    contentBase: resolve(__dirname, "../public"),
-    publicPath: resolve("../public"),
+    contentBase: resolve(__dirname, "./public"),
+    publicPath: resolve("./public"),
     watchContentBase: true,
     compress: true,
     port: 9000,
@@ -17,10 +17,10 @@ module.exports = {
   // where webpack will dump built assets
   output: {
     // local path on disk
-    path: resolve("../public"),
+    path: resolve("./public"),
     filename: "bundle.js",
     // path in browser e.g. /server/public
-    publicPath: resolve("../public"),
+    publicPath: resolve("./public"),
   },
   resolve: {
     extensions: [".js", ".jsx", ".css"],
