@@ -19,7 +19,7 @@ async function perform_fetch({ endpoint, method = "POST", query = "", headers = 
       // No body allowed on GET
       delete options.body;
     }
-    const response = await fetch(process.env.API_URL + endpoint + "?" + query, options);
+    const response = await fetch(process.env.API_URL + "/" + endpoint + "?" + query, options);
     if (response.status == 200) {
       const result = await response.json();
       console.log(`fetch success: ${method} ${endpoint}`, result);
