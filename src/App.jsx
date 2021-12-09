@@ -5,6 +5,9 @@ import { AuthProvider } from "./AuthProvider";
 
 class App extends Component {
   render() {
+    console.log("*************************************************************\nHEY YOU, ACCEPT THE RISK WITH THIS LINK, THEN RELOAD THE PAGE\n",
+      process.env.API_URL,
+      "\nTHANKS AND HAVE A GREAT TIME TAKING INVENTORY OF YOUR HOME\n*************************************************************");
     return (
       <AuthProvider>
         <Layout>
