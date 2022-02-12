@@ -18,6 +18,7 @@ module.exports = (env) => {
       port: 9000,
       overlay: true,
       hot: true,
+      host: '0.0.0.0'
     },
     // where webpack will dump built assets
     output: {
